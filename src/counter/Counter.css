@@ -1,0 +1,22 @@
+.container-fluid{
+  background-color: #f1f7fc;
+}
+
+.fa-solid{
+  color: rgb(40, 95, 255);
+  padding-left: 30px;
+  font-size: 40px;
+  padding-bottom: 10px;
+  margin: -25px;
+  padding: 0;
+}
+.shadow{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+h2{
+  padding-top: 60px;
+  padding-bottom: 20px;
+}

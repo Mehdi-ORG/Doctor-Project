@@ -1,0 +1,50 @@
+.section-sec{
+  padding: 60px 0;
+}
+.section-div{
+  /* margin: 0 95px; */
+  padding: 0 12px;
+}
+.section-div .header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+
+.section-div h2{
+  position: relative;
+  border-bottom: 1px solid gray;
+  padding: 20px 20px;
+  margin-bottom:30px;
+}
+.section-div h2::after{
+ position: absolute;
+ content: '';
+ bottom: -1.5px;
+ left:50%;
+ transform: translateX(-50%);
+ width:80px;
+ height: 2.5px;
+ background-color: rgb(46, 134, 249);
+}
+
+.row{
+  --bs-gutter-x:4px!
+  important;
+}
+
+.image-container{
+  overflow: hidden;
+}
+
+.zoom-image{
+  transition: transform 0.6s ease;
+  width: 100%;
+  height: 100% ;
+}
+
+.image-container:hover .zoom-image{
+  transform: scale(1.1);
+}

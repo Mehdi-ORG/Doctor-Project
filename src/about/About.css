@@ -1,0 +1,30 @@
+.fa-solid{
+  color: rgb(40, 95, 255);
+  padding-left: 30px;
+  font-size: 45px;
+  padding-bottom: 10px;
+}
+
+p{
+  font-size: 15px;
+  text-align: justify;
+}
+
+.div-image{
+  background-clip: border-box;
+}
+.ul{
+  padding: 0;
+}
+
+.counter{
+  background-color: #f1f7fc;
+}
+
+.p-0{
+ margin-top: -35px;
+}
+
+.container-div{
+  padding: 30px;
+}

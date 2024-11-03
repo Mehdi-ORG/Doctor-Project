@@ -1,0 +1,93 @@
+*{
+  font-family: 'iransans';
+  box-sizing: border-box;
+  text-decoration: none!
+  important;
+}
+.nav-link{
+  position: relative;
+}
+.nav-link::after{
+  content:'';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color:  rgb(46, 134, 249);
+  transition: width 0.6s ease;
+}
+.nav-link:hover::after{
+  width: 100%;
+}
+
+.nav-drop-item{
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-drop-item::after{
+  display: none;
+}
+
+.bottomNav{
+  padding: 0;
+  margin: 0;
+  background-color: white;
+}
+
+.appointment{
+  width: auto;
+  height: 30px;
+  line-height: 30px;
+  margin: 4px;
+  padding:0 25px;
+  margin-top: 12px;
+  background-color: rgb(46, 134, 249);
+  border-radius: 30px;
+}
+
+ .navbar-toggler-icon{
+  --bs-navbar-toggler-icon-bg:url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%2846, 134, 249, 1%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e")
+}
+
+.navbar-toggler{
+  --bs-navbar-color: rgb(255, 255, 255);
+  --bs-navbar-toggler-border-color: rgb(255, 255, 255);
+} */
+
+.label{
+  width: auto;
+  height: 50px;
+  line-height: 50px;
+ font-family: 'lalezar ';
+}
+
+.active .hover{
+  color: red;
+}
+
+.nav-back{
+  background-color: white;
+}
+
+.dropdown-toggle::after{
+  border: 0 !important;
+}
+
+.label .login.navlink{
+  text-decoration: none;
+  color: rgb(105, 105, 105);
+  border: none;
+}
+
+.label .login.navlink:hover{
+  color: black! important;
+}
+
+.active-link{
+  color: rgb(0, 0, 0)!
+  important;
+  border: none!
+  important;
+}
