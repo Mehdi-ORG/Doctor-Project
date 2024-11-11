@@ -2,10 +2,12 @@ import { useState } from "react";
 import "./Appointment.css";
 
 function Appointment() {
-  const [inputValue, setInputValue] = useState("");
-  const handleChange = (e) => {
-    setInputValue(e.target.value);
-  };
+  const[name,setName]=useState("dfgdfg")
+  const[email,setEmail]=useState("")
+  const[number,setNumber]=useState("")
+  // const handleChange = (e) => {
+  //   setInputValue(e.target.value);
+  // };
   return (
     <>
       <section className="appointment-section">
@@ -22,8 +24,8 @@ function Appointment() {
               <div className="col-md-4">
                 <input
                   type="text"
-                  value={inputValue}
-                  onChange={handleChange}
+                  value={name}
+                  onChange={(e)=>setName(e.target.value)}
                   placeholder="your name"
                   className="w-100 h-100 input-fix"
                 />
@@ -31,8 +33,8 @@ function Appointment() {
               <div className="col-md-4 my-3 my-md-0">
                 <input
                 type="text"
-                value={inputValue}
-                onChange={handleChange}
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}
                 placeholder="your email"
                 className="w-100 h-100 input-fix"
                 />
@@ -40,8 +42,8 @@ function Appointment() {
               <div className="col-md-4">
                 <input
                   type="text"
-                  value={inputValue}
-                  onChange={handleChange}
+                  value={number}
+                  onChange={(e)=>setNumber(e.target.value)}
                   placeholder="your number"
                   className="w-100 h-100 input-fix"
                 />

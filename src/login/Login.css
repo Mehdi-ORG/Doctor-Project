@@ -30,7 +30,7 @@ body {
 	margin-top: 0.4em;
 }
 
-input {
+.login input {
 	background: transparent;
 	border: none;
 	border-bottom: white 2px solid;

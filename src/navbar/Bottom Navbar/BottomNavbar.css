@@ -60,7 +60,7 @@
   width: auto;
   height: 50px;
   line-height: 50px;
- font-family: 'lalezar ';
+  font-family: 'lalezar ';
 }
 
 .active .hover{
@@ -90,4 +90,8 @@
   important;
   border: none!
   important;
+}
+
+.container-fluid{
+  padding: 0! important;
 }
