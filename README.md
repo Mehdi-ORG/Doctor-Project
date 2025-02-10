@@ -21,3 +21,16 @@ Performance Optimization: React-memo, useMemo.
 بهینه سازی فرم و جلوگیری از رندر غیر ضروری
 یادگیری مدیریت state  پیشرفته
 طراحی سیستم چندزبانه
+نصب و اجرای پروژه
+
+1. این مخزن را کلون کنید:
+   ```bash
+   git clone https://github.com/your-username/repo-name.git
+  2. وارد پوشه پروژه شوید:
+     cd repo-name
+
+3.پکیج‌ها را نصب کنید:
+yarn install  # یا npm install
+
+4.پروژه را اجرا کنید:
+yarn start  # یا npm start
