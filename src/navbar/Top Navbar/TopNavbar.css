@@ -10,3 +10,44 @@
   height: 40px;
   line-height: 40px;
 }
+
+.navbartop .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbartop .nav-link {
+  color: #fff;
+}
+
+.navbartop .btn-lang {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbartop .btn-lang:hover {
+  background-color: #fff;
+  color: #343a40;
+}
+
+.information p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown-lang {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+}

@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e9fb0522.css",
+    "main.js": "/static/js/main.a46e12ca.js",
+    "static/media/Lalezar.ttf": "/static/media/Lalezar.241ca811c53de4ed36a4.ttf",
+    "static/media/hero-bg.jpg": "/static/media/hero-bg.458c8a572038087e3b7b.jpg",
+    "static/media/gallery-4.jpg": "/static/media/gallery-4.0b4e121d2167b471ea19.jpg",
+    "static/media/gallery-8.jpg": "/static/media/gallery-8.2a6eb3cf293a10646f42.jpg",
+    "static/media/gallery-7.jpg": "/static/media/gallery-7.ba75c5816cfabc5d0a81.jpg",
+    "static/media/gallery-1.jpg": "/static/media/gallery-1.028f49fadfbafdfdde3a.jpg",
+    "static/media/gallery-3.jpg": "/static/media/gallery-3.c1dfcb56b44c3253d381.jpg",
+    "static/media/departments-1.jpg": "/static/media/departments-1.ab2c2b0dbddc8e594322.jpg",
+    "static/media/about.jpg": "/static/media/about.ea024a9dc739b274705c.jpg",
+    "static/media/Iranian Sans.ttf": "/static/media/Iranian Sans.8c2ed8fb0154947263c5.ttf",
+    "static/media/gallery-6.jpg": "/static/media/gallery-6.8072f0352a5b78207738.jpg",
+    "static/media/gallery-5.jpg": "/static/media/gallery-5.3e786b5053660edf67bf.jpg",
+    "static/media/departments-3.jpg": "/static/media/departments-3.57c810f155fd42ce2edb.jpg",
+    "static/media/departments-4.jpg": "/static/media/departments-4.40be9aaaeb4f845722cd.jpg",
+    "static/media/gallery-2.jpg": "/static/media/gallery-2.c64b3cd5503064badcb0.jpg",
+    "static/media/departments-2.jpg": "/static/media/departments-2.a7c48408c09f93a49408.jpg",
+    "static/media/doctors-4.jpg": "/static/media/doctors-4.d2e578c3fa467ad05022.jpg",
+    "static/media/doctors-1.jpg": "/static/media/doctors-1.eec585aaa98d4430c7c4.jpg",
+    "static/media/departments-5.jpg": "/static/media/departments-5.e26ea60839e642c32ce0.jpg",
+    "static/media/doctors-3.jpg": "/static/media/doctors-3.80b20cb68fe60a73a169.jpg",
+    "static/media/doctors-2.jpg": "/static/media/doctors-2.07d1b7c11067d81329ad.jpg",
+    "index.html": "/index.html",
+    "main.e9fb0522.css.map": "/static/css/main.e9fb0522.css.map",
+    "main.a46e12ca.js.map": "/static/js/main.a46e12ca.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e9fb0522.css",
+    "static/js/main.a46e12ca.js"
+  ]
+}

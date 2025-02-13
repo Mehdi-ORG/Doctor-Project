@@ -31,8 +31,7 @@
 }
 
 .row{
-  --bs-gutter-x:4px!
-  important;
+  --bs-gutter-x:4px
 }
 
 .image-container{

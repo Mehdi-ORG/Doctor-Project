@@ -35,20 +35,7 @@
   font-size: 16px;
 }
 
-.doctor-div{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  transition: transform 0.5s;
-}
-
-.doctor-div:hover{
-  transform: translateY(-10px);
-}
-
 @media (max-width: 768px) {
-
   .doctor-div{
     margin: 0 10px;
   }
@@ -63,31 +50,4 @@
 .doctor-text1 p{
   font-size: 14px;
 }
-}
-
-.doctor-text1{
-  width: 70%;
-}
-
-.doctor-img{
-  width: 150px;
-  border-radius: 100%;
-  margin: 30px;
-}
-
-.doctor-icon{
-  font-size: 20px;
-}
-
-.doctor-icon i{
-  background-color: rgb(229, 227, 227);
-  padding: 10px;
-  border-radius: 100%;
-  margin: 0 10px;
-  opacity: 60%;
-}
-
-.doctor-icon i:hover{
-  background-color: #1977cc;
-  color: white;
 }

@@ -1,0 +1,45 @@
+.a-link{
+  text-decoration: none;
+}
+
+.service-bgwhite{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid lightgray;
+  transition: all 0.5s;
+}
+
+.service-bgwhite:hover{
+  background: rgb(46, 120, 270) !important;
+  color: white;
+  transform: scale(1.03);
+
+}
+
+.service-bgwhite:hover .icon i{
+  background-color: white;
+  color: rgb(46, 120, 270);
+}
+
+.service-bgwhite:hover .a-link{
+  color: white;
+}
+
+.icon i{
+  font-size: 35px;
+  background-color: rgb(46, 120, 270);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  margin-top: 80px;
+  box-shadow: rgba(46, 134, 249, 0.292) -8px -8px 0px;
+ }
+
+ .matn{
+  padding-bottom: 80px;
+  text-align: justify;
+  padding: 0 5px;
+}

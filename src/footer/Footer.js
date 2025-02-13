@@ -1,3 +1,4 @@
+import { memo } from "react";
 import "./Footer.css";
 
 function Footer() {
@@ -20,10 +21,10 @@ function Footer() {
               </p>
             </div>
             <div>
-              <a href="" className="px-2 fs-3 text-dark opacity-75 "><i class="fa-brands fa-twitter"></i></a>
-              <a href="" className="px-2 fs-3 text-dark opacity-75"><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="" className="px-2 fs-3 text-dark opacity-75"><i class="fa-brands fa-instagram"></i></a>
-              <a href="" className="px-2 fs-3 text-dark opacity-75"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="javascript:void(0);" className="px-2 fs-3 text-dark opacity-75 "><i className="fa-brands fa-twitter"></i></a>
+              <a href="javascript:void(0);" className="px-2 fs-3 text-dark opacity-75"><i className="fa-brands fa-x-twitter"></i></a>
+              <a href="javascript:void(0);" className="px-2 fs-3 text-dark opacity-75"><i className="fa-brands fa-instagram"></i></a>
+              <a href="javascript:void(0);" className="px-2 fs-3 text-dark opacity-75"><i className="fa-brands fa-linkedin"></i></a>
             </div>
           </div>
           <div className=" col-lg-2 col-md-3">
@@ -69,4 +70,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default memo(Footer);

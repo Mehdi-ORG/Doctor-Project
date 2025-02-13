@@ -8,8 +8,47 @@ import image5 from "../asset/image/gallery/gallery-5.jpg";
 import image6 from "../asset/image/gallery/gallery-6.jpg";
 import image7 from "../asset/image/gallery/gallery-7.jpg";
 import image8 from "../asset/image/gallery/gallery-8.jpg";
+import { useState, memo } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import ImageCard from "../components/imageCard/imageCard";
 
 function Gallery() {
+  const [imageInfo, setImageInfo] = useState([
+    {
+      id: 1,
+      image:  image1 ,
+    },
+    {
+      id: 2,
+      image:  image2 ,
+    },
+
+    {
+      id: 3,
+      image:  image3 ,
+    },
+    {
+      id: 4,
+      image:  image4 ,
+    },
+    {
+      id: 5,
+      image: image5 ,
+    },
+    {
+      id: 6,
+      image:  image6 ,
+    },
+    {
+      id: 7,
+      image:  image7 ,
+    },
+    {
+      id: 8,
+      image:  image8 ,
+    },
+  ]);
+
   return (
     <>
       <Navbar />
@@ -22,53 +61,18 @@ function Gallery() {
               استفاده از طراحان گرافیک است.
             </p>
           </div>
-          <div>
-            <div className="row gy-1">
-              <div className="col-lg-3 col-md-4 image-container">
-                <div className="zoom-image">
-                  <img src={image1} alt="" className="img-fluid" />
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 image-container">
-                <div className="zoom-image">
-                  <img src={image2} alt="" className="img-fluid" />
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 image-container">
-                <div className="zoom-image">
-                  <img src={image3} alt="" className="img-fluid" />
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 image-container">
-                <div className="zoom-image">
-                  <img src={image4} alt="" className="img-fluid" />
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 image-container">
-                <div className="zoom-image">
-                  <img src={image5} alt="" className="img-fluid" />
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 image-container">
-                <div className="zoom-image">
-                  <img src={image6} alt="" className="img-fluid" />
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 image-container">
-                <div className="zoom-image">
-                  <img src={image7} alt="" className="img-fluid" />
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-4 image-container">
-                <div className="zoom-image">
-                  <img src={image8} alt="" className="img-fluid" />
-                </div>
-              </div>
-            </div>
-          </div>
+          <Container>
+            <Row lg={4} md={3} xs={1} className="g-2">
+              {imageInfo.map((imageinformation) => (
+                <Col key={imageinformation.id}>
+                  <ImageCard {...imageinformation} />
+                </Col>
+              ))}
+            </Row>
+          </Container>
         </div>
       </section>
     </>
   );
 }
-export default Gallery;
+export default memo(Gallery);

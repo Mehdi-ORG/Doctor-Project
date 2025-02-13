@@ -2,6 +2,7 @@ import Navbar from "../navbar/Navbar";
 import Card from "react-bootstrap/Card";
 import Footer from "../footer/Footer";
 import "./Home.css";
+import { memo } from "react";
 function Home() {
   return (
     <>
@@ -24,7 +25,7 @@ function Home() {
                 ,وقت شناسم , اهل تسلیم شدن نیستم و مسئولیت کارهای خودم را به
                 عهده میگیرم. آینده نگر و اهل برنامه ریزی های بلند مدت هستم,
               </Card.Text>
-              <a href="#" class="btn btn-primary  mb-5 mt-3 rounded-5 ">
+              <a href="javascript:void(0);" className="btn btn-primary  mb-5 mt-3 rounded-5 ">
               <i className="fa-solid fa-chevron-right text-white p-3 card-link-a"> نمونه کارهای من</i>
               </a>
             </div>
@@ -79,4 +80,4 @@ function Home() {
     </>
   );
 }
-export default Home;
+export default memo(Home);

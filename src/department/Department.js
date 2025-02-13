@@ -5,6 +5,7 @@ import department3 from "../asset/image/departments-3.jpg";
 import department4 from "../asset/image/departments-4.jpg";
 import department5 from "../asset/image/departments-5.jpg";
 import { useState } from "react";
+import { memo } from "react";
 
 function Department() {
   const [activeTab, setActiveTab] = useState("department-tab-1");
@@ -220,4 +221,4 @@ function Department() {
     </>
   );
 }
-export default Department;
+export default memo(Department);

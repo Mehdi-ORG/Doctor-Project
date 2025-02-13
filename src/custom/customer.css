@@ -1,0 +1,20 @@
+.scroll-container {
+  display: flex;
+  overflow-x: auto; /* اسکرول افقی */
+  white-space: nowrap; /* کارت‌ها در یک ردیف نمایش داده شوند */
+  gap: 1rem; /* فاصله بین کارت‌ها */
+  padding: 1rem; /* فاصله داخلی */
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px; /* ارتفاع نوار اسکرول */
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #cccccc; /* رنگ اسکرول */
+  border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* پس‌زمینه اسکرول */
+}

@@ -1,8 +1,7 @@
 *{
   font-family: 'iransans';
   box-sizing: border-box;
-  text-decoration: none!
-  important;
+  text-decoration: none;
 }
 .nav-link{
   position: relative;
@@ -54,7 +53,7 @@
 .navbar-toggler{
   --bs-navbar-color: rgb(255, 255, 255);
   --bs-navbar-toggler-border-color: rgb(255, 255, 255);
-} */
+}
 
 .label{
   width: auto;
@@ -86,12 +85,21 @@
 }
 
 .active-link{
-  color: rgb(0, 0, 0)!
-  important;
-  border: none!
-  important;
+  color: rgb(0, 0, 0);
+  border: none;
 }
 
 .container-fluid{
   padding: 0! important;
+}
+
+.label .logout-button {
+  text-decoration: none;
+  color: rgb(105, 105, 105);
+  border: none;
+  background-color: white;
+}
+
+.label .logout-button:hover {
+  color: black !important;
 }

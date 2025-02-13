@@ -3,11 +3,19 @@ import aboutImage from "../asset/image/about.jpg";
 import Counter from "../counter/Counter";
 import "./About.css";
 import Appointment from "../appointment/Appointment";
+import Customer from "../custom/customer";
+import { useState, memo } from "react";
 
 function About() {
+  const [refresh, setRefresh] = useState(false);
+  const handleRefresh = () => {
+    setRefresh(!refresh);
+  };
   return (
     <>
       <Navbar />
+      <Appointment onRefresh={handleRefresh} />
+      <Customer refresh={refresh} />
       <div className="px-5 d-flex row align-items-center">
         <div className="col-lg-6 my-4 ">
           <div className="px-3">
@@ -59,9 +67,10 @@ function About() {
         </div>
       </div>
       <Counter />
-      <Appointment/>
+
+
     </>
   );
 }
 
-export default About;
+export default memo(About);
