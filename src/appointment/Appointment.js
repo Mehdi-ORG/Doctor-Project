@@ -177,7 +177,7 @@ function Appointment({ onRefresh }) {
           closeButton: false,
         });
       });
-  });
+  }, [info]);
 
 
   const maxDate = new Date();

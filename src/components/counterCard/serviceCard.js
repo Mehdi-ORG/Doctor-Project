@@ -8,9 +8,9 @@ function ServiceCard({iconS, title, textS}) {
         <div className="icon">
           {iconS}
         </div>
-        <a href="javascript:void(0);" className="a-link">
+        <button className="a-link">
           <h3 className="mb-4">{title} </h3>
-        </a>
+        </button>
         <p className="matn text-center">{textS}
         </p>
       </div>

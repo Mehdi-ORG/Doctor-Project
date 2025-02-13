@@ -4,12 +4,12 @@ import doctor1 from "../asset/image/doctors/doctors-1.jpg";
 import doctor2 from "../asset/image/doctors/doctors-2.jpg";
 import doctor3 from "../asset/image/doctors/doctors-3.jpg";
 import doctor4 from "../asset/image/doctors/doctors-4.jpg";
-import { memo, useState } from "react";
+import { memo } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import DoctorsCard from "../components/doctorsCard/doctorsCard";
 
 function Doctors() {
-  const [doctorInfo, setDoctorInfo] = useState([
+  const doctorInfo = [
     {
       id: 1,
       image: doctor1,
@@ -38,7 +38,7 @@ function Doctors() {
       expertise: "جراح ارتوپد",
       textD: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ ",
     },
-  ]);
+  ];
 
   return (
     <>
@@ -48,10 +48,10 @@ function Doctors() {
           <h3>دکتر ها</h3>
           <p>
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-            استفاده از طراحان گرافیک است.{" "}
+            استفاده از طراحان گرافیک است.
           </p>
         </div>
-        <Container fluid style={{backgroundColor:'white'}}>
+        <Container fluid style={{ backgroundColor: "white" }}>
           <Row xs={1} lg={2}>
             {doctorInfo.map((doctors) => (
               <Col key={doctors.id} className="g-3">
@@ -64,4 +64,5 @@ function Doctors() {
     </>
   );
 }
+
 export default memo(Doctors);

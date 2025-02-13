@@ -25,9 +25,9 @@ function Home() {
                 ,وقت شناسم , اهل تسلیم شدن نیستم و مسئولیت کارهای خودم را به
                 عهده میگیرم. آینده نگر و اهل برنامه ریزی های بلند مدت هستم,
               </Card.Text>
-              <a href="javascript:void(0);" className="btn btn-primary  mb-5 mt-3 rounded-5 ">
+              <button className="btn btn-primary  mb-5 mt-3 rounded-5 ">
               <i className="fa-solid fa-chevron-right text-white p-3 card-link-a"> نمونه کارهای من</i>
-              </a>
+              </button>
             </div>
           </div>
           <div className=" d-flex align-items-center col-lg-8 row pb-4 ">
