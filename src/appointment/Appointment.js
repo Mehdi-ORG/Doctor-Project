@@ -40,7 +40,7 @@ function Appointment({ onRefresh }) {
     setInfo((prevInfo) => ({ ...prevInfo, date: selectedDate }));
   };
 
-  const clickHandler = useCallback(() => {
+  const clickHandler = () => {
     const { name, email, number, date, department, doctor, hour } = info;
 
     if (!name || !email || !number || !date || !department || !doctor || !hour) {
@@ -179,7 +179,7 @@ function Appointment({ onRefresh }) {
           closeButton: false,
         });
       });
-  }, [info, emailPattern, phonePattern, onRefresh]);
+  };
 
   const maxDate = new Date();
   maxDate.setMonth(maxDate.getMonth() + 3);
