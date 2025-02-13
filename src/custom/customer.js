@@ -39,7 +39,7 @@ function Customer({ refresh }) {
         })
         .catch((error) => console.error("Error deleting card:", error));
     },
-    [customerInfo]
+    []
   );
 
   useEffect(() => {
@@ -88,7 +88,7 @@ function Customer({ refresh }) {
                 rotate: { duration: 2, ease: "easeInOut" },
                 opacity: { delay: 2, duration: 2 },
                 y: { delay: 2, duration: 2, ease: "easeInOut" },
-                x: { delay: 2, duration: 2, ease: "easeInOut" }, 
+                x: { delay: 2, duration: 2, ease: "easeInOut" },
               },
             }}
             style={{

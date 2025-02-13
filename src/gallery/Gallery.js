@@ -8,47 +8,24 @@ import image5 from "../asset/image/gallery/gallery-5.jpg";
 import image6 from "../asset/image/gallery/gallery-6.jpg";
 import image7 from "../asset/image/gallery/gallery-7.jpg";
 import image8 from "../asset/image/gallery/gallery-8.jpg";
-import { useState, memo } from "react";
+import { memo } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ImageCard from "../components/imageCard/imageCard";
 
+// آرایه‌ای که لیست تصاویر را نگه می‌دارد. این متغیر خارج از تابع قرار داده شده
+// تا هر بار که Gallery رندر می‌شود، دوباره ساخته نشود
+const imageData = [
+  { id: 1, image: image1 },
+  { id: 2, image: image2 },
+  { id: 3, image: image3 },
+  { id: 4, image: image4 },
+  { id: 5, image: image5 },
+  { id: 6, image: image6 },
+  { id: 7, image: image7 },
+  { id: 8, image: image8 },
+];
+
 function Gallery() {
-  const [imageInfo, setImageInfo] = useState([
-    {
-      id: 1,
-      image:  image1 ,
-    },
-    {
-      id: 2,
-      image:  image2 ,
-    },
-
-    {
-      id: 3,
-      image:  image3 ,
-    },
-    {
-      id: 4,
-      image:  image4 ,
-    },
-    {
-      id: 5,
-      image: image5 ,
-    },
-    {
-      id: 6,
-      image:  image6 ,
-    },
-    {
-      id: 7,
-      image:  image7 ,
-    },
-    {
-      id: 8,
-      image:  image8 ,
-    },
-  ]);
-
   return (
     <>
       <Navbar />
@@ -56,16 +33,13 @@ function Gallery() {
         <div className="section-div">
           <div className="header">
             <h2>عکس ها</h2>
-            <p>
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-              استفاده از طراحان گرافیک است.
-            </p>
+            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ است.</p>
           </div>
           <Container>
             <Row lg={4} md={3} xs={1} className="g-2">
-              {imageInfo.map((imageinformation) => (
-                <Col key={imageinformation.id}>
-                  <ImageCard {...imageinformation} />
+              {imageData.map((img) => (
+                <Col key={img.id}>
+                  <ImageCard {...img} />
                 </Col>
               ))}
             </Row>
@@ -75,4 +49,5 @@ function Gallery() {
     </>
   );
 }
+
 export default memo(Gallery);

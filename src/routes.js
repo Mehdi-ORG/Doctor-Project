@@ -1,5 +1,4 @@
 import About from "./about/About";
-import Customer from "./custom/customer";
 import Doctors from "./doctors/Doctors";
 import Gallery from "./gallery/Gallery";
 import Home from "./home/Home";

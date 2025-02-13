@@ -1,18 +1,17 @@
-import { useEffect, useState, memo } from "react";
+import { useEffect, memo } from "react";
 import Navbar from "../navbar/Navbar";
 import "./Service.css";
 import Aos from "aos";
 import Department from "../department/Department";
 import { Container, Row, Col } from "react-bootstrap";
 import ServiceCard from "../components/counterCard/serviceCard";
-import {serviceData} from '../serviceData'
+import { serviceData } from "../serviceData";
 
 function Service() {
-  const [serviceInfo, setServiceInfo] = useState(serviceData);
-
   useEffect(() => {
     Aos.init();
   }, []);
+
   return (
     <>
       <Navbar />
@@ -26,9 +25,9 @@ function Service() {
         </div>
         <Container>
           <Row lg={3} md={2} xs={1}>
-            {serviceInfo.map((services) => (
-              <Col>
-                <ServiceCard {...services} />
+            {serviceData.map((service) => (
+              <Col key={service.id}> {/* اضافه کردن key یکتا */}
+                <ServiceCard {...service} />
               </Col>
             ))}
           </Row>

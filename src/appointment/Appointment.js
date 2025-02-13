@@ -41,7 +41,8 @@ function Appointment({ onRefresh }) {
   };
 
   const clickHandler = useCallback(() => {
-    const { name, email, number, date, department, doctor ,hour } = info;
+    const { name, email, number, date, department, doctor, hour } = info;
+
     if (!name || !email || !number || !date || !department || !doctor || !hour) {
       toast.warn(" لطفا تمام فیلدهای مورد نیاز را پر کنید!", {
         position: "top-right",
@@ -120,6 +121,7 @@ function Appointment({ onRefresh }) {
 
             const convertedDate = `${info.date.year}.${info.date.month}.${info.date.day} - ${info.hour}`;
             const requestData = { ...info, date: convertedDate };
+
             axios
               .post("http://localhost:5000/customer", requestData)
               .then((response) => {
@@ -141,11 +143,11 @@ function Appointment({ onRefresh }) {
                     department: "",
                     doctor: "",
                     notes: "",
-                    hour:""
+                    hour: "",
                   });
                 }
               })
-              .catch((error) => {
+              .catch(() => {
                 toast.warn("خطا در ذخیره‌سازی اطلاعات", {
                   position: "top-right",
                   autoClose: 2000,
@@ -156,7 +158,7 @@ function Appointment({ onRefresh }) {
                 });
               });
           })
-          .catch((error) => {
+          .catch(() => {
             toast.warn("خطا در بررسی شماره تلفن", {
               position: "top-right",
               autoClose: 2000,
@@ -167,7 +169,7 @@ function Appointment({ onRefresh }) {
             });
           });
       })
-      .catch((error) => {
+      .catch(() => {
         toast.warn("خطا در بررسی ایمیل", {
           position: "top-right",
           autoClose: 2000,
@@ -177,8 +179,7 @@ function Appointment({ onRefresh }) {
           closeButton: false,
         });
       });
-  }, [info]);
-
+  }, [info, emailPattern, phonePattern, onRefresh]);
 
   const maxDate = new Date();
   maxDate.setMonth(maxDate.getMonth() + 3);
