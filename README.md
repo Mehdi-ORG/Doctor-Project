@@ -48,7 +48,7 @@ React.js · JavaScript (ES6+) · React Router · React Hooks · API Integration 
 
 ## چگونه نصب کنیم؟ (Installation)
 ### 1. ابتدا ریپازیتوری را کلون کنید:
-git clone https://github.com/USERNAME/REPO-NAME.git
+https://github.com/Mehdi-ORG/Doctor-Project.git
 
 ### 2. وارد پوشه پروژه شوید:
 cd REPO-NAME
