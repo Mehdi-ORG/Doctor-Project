@@ -28,4 +28,8 @@
 دمو آنلاین (Netlify): [دریافت نسخه آنلاین](https://doctor-project-mehdi-org.netlify.app)
 
 
-وجه: به دلیل محدودیت‌های هاستینگ و نیاز به کارت اعتباری در پلتفرم‌هایی مانند Render و Vercel، امکان دیپلوی کردن سرور JSON به‌صورت آنلاین وجود نداشت. بنابراین، برای اجرای آن باید به‌صورت لوکال از دستور json-server --watch db.json --port 5000 استفاده کنید.
+توجه: به دلیل محدودیت‌های هاستینگ و نیاز به کارت اعتباری در پلتفرم‌هایی مانند Render و Vercel، امکان دیپلوی کردن سرور JSON به‌صورت آنلاین وجود نداشت. بنابراین، برای اجرای آن باید به‌صورت لوکال از دستور json-server --watch db.json --port 5000 استفاده کنید.
+
+
+مهارت‌ها:
+React.js · JavaScript (ES6+) · React Router · React Hooks · API Integration · Axios · JSON Server / REST API · Framer Motion · React Toastify · SweetAlert2 · Form Validation (RegEx, Custom Validation) · UI/UX Design
