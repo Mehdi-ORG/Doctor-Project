@@ -45,3 +45,26 @@
 
 مهارت‌ها:
 React.js · JavaScript (ES6+) · React Router · React Hooks · API Integration · Axios · JSON Server / REST API · Framer Motion · React Toastify · SweetAlert2 · Form Validation (RegEx, Custom Validation) · UI/UX Design
+
+## چگونه نصب کنیم؟ (Installation)
+### 1. ابتدا ریپازیتوری را کلون کنید:
+git clone https://github.com/USERNAME/REPO-NAME.git
+
+### 2. وارد پوشه پروژه شوید:
+cd REPO-NAME
+
+### 3. پکیج‌های موردنیاز را نصب کنید:
+yarn install   # یا npm install
+
+### 4. پروژه را اجرا کنید:
+yarn start     # یا npm start
+
+## نحوه استفاده (Usage)
+
+1.ابتدا یک حساب کاربری بسازید.
+
+2.وارد شوید و از قابلیت‌های مدیریت نوبت‌دهی استفاده کنید.
+
+3.می‌توانید لیست نوبت‌های خود را مشاهده، ویرایش یا حذف کنید.
+
+از منوی بالا می‌توانید زبان سایت را تغییر دهید.
