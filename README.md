@@ -23,7 +23,7 @@
 
 لینک‌های مفید:
 
-ویدئو دمو در یوتیوب: مشاهده ویدئو (https://youtu.be/GaxFLsggCO0)
+ویدئو دمو در یوتیوب: [مشاهده ویدئو](https://youtu.be/GaxFLsggCO0)
 
 دمو آنلاین (Netlify): [دریافت نسخه آنلاین](https://doctor-project-mehdi-org.netlify.app)
 
