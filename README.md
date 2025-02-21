@@ -51,7 +51,7 @@ React.js · JavaScript (ES6+) · React Router · React Hooks · API Integration 
 https://github.com/Mehdi-ORG/Doctor-Project.git
 
 ### 2. وارد پوشه پروژه شوید:
-cd REPO-NAME
+cd Doctor-Project
 
 ### 3. پکیج‌های موردنیاز را نصب کنید:
 yarn install   # یا npm install
