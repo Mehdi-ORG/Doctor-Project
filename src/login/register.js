@@ -68,7 +68,7 @@ function Register() {
       });
 
       Swal.fire({
-        text: "ثبت‌نام با موفقیت انجام شد!",
+        text: "ثبت‌ نام با موفقیت انجام شد!",
         icon: "success",
         confirmButtonText: "بستن",
       });

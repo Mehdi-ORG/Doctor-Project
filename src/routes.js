@@ -1,12 +1,14 @@
-import About from "./about/About";
+import { lazy } from "react";
 import Doctors from "./doctors/Doctors";
 import Gallery from "./gallery/Gallery";
 import Home from "./home/Home";
 import Login from "./login/Login";
 import Service from "./service/Service";
-import Panel from "./panel/panel"
+import Panel from "./panel/panel";
 import Register from "./login/register";
 import ForgotPassword from "./forgot-password/forgot-password";
+
+const About = lazy(() => import("./about/About"));
 
 const routes = [
   {
@@ -35,15 +37,16 @@ const routes = [
   },
   {
     path: "/panel",
-    element:<Panel /> ,
+    element: <Panel />,
   },
   {
     path: "/register",
-    element: <Register/> ,
+    element: <Register />,
   },
   {
     path: "/forgot-password",
-    element: <ForgotPassword/> ,
+    element: <ForgotPassword />,
   },
 ];
+
 export default routes;

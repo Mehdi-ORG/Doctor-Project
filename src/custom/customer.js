@@ -9,6 +9,7 @@ import InfoCard from "../components/infoCard/infoCard";
 function Customer({ refresh }) {
   const [customerInfo, setCustomerInfo] = useState([]);
   const [newCard, setNewCard] = useState(null);
+  const [prevLength, setPrevLength] = useState(0);
 
   useEffect(() => {
     axios
@@ -28,6 +29,18 @@ function Customer({ refresh }) {
       .catch((error) => console.error("Error fetching data:", error));
   }, [refresh]);
 
+  useEffect(() => {
+    if (customerInfo.length > prevLength && refresh) {
+      const latestCard = customerInfo[customerInfo.length - 1];
+      setNewCard(latestCard);
+
+      setTimeout(() => {
+        setNewCard(null);
+      }, 5000);
+    }
+    setPrevLength(customerInfo.length);
+  }, [customerInfo]);
+
   const handleDelete = useCallback(
     (id) => {
       axios
@@ -41,17 +54,6 @@ function Customer({ refresh }) {
     },
     []
   );
-
-  useEffect(() => {
-    if (customerInfo.length > 0) {
-      const latestCard = customerInfo[customerInfo.length - 1];
-      setNewCard(latestCard);
-
-      setTimeout(() => {
-        setNewCard(null);
-      }, 5000);
-    }
-  }, [customerInfo]);
 
   return (
     <Container>

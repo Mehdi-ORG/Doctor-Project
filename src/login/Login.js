@@ -1,20 +1,24 @@
 import Navbar from "../navbar/Navbar";
 import "./Login.css";
 import React, { memo, useState, useEffect } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, Flip } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Flip } from "react-toastify";
+import { authService } from "../services/authService";
+import { showToast } from "../utils/toastUtils";
 
 function Login() {
-
-  const [userName, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    userName: "",
+    password: "",
+    captchaInput: "",
+  });
   const [num1, setNum1] = useState(0);
   const [num2, setNum2] = useState(0);
-  const [captchaInput, setCaptchaInput] = useState("");
   const [captchaValid, setCaptchaValid] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
 
   const navigate = useNavigate();
 
@@ -27,7 +31,7 @@ function Login() {
     const newNum2 = Math.floor(Math.random() * 10);
     setNum1(newNum1);
     setNum2(newNum2);
-    setCaptchaInput("");
+    setFormData((prev) => ({ ...prev, captchaInput: "" }));
     setCaptchaValid(null);
   };
 
@@ -41,81 +45,54 @@ function Login() {
     }
   };
 
-  const handleLogin = async () => {
-    if (!userName.trim() || !password.trim()) {
-      toast.warn(" لطفاً یوزرنیم و پسورد را وارد کنید!", {
-        position: "bottom-right",
-        autoClose: 2000,
-        icon: false,
-        closeOnClick: true,
-        theme: "colored",
-        closeButton: false,
-      });
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
 
+    if (name === "captchaInput") {
+      validateCaptcha(value);
+    }
+  };
+
+  const handleLogin = async () => {
+    if (!formData.userName.trim() || !formData.password.trim()) {
+      showToast.error("لطفاً یوزرنیم و پسورد را وارد کنید!");
       return;
     }
 
-
     if (!captchaValid) {
-      toast.warn(" کپچا اشتباه است! لطفاً دوباره تلاش کنید.", {
-        position: "bottom-right",
-        autoClose: 2000,
-        icon: false,
-        closeOnClick: true,
-        theme: "colored",
-        closeButton: false,
-      });
+      showToast.error("کپچا اشتباه است! لطفاً دوباره تلاش کنید.");
       generateCaptcha();
       return;
     }
 
+    setIsLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/users");
-      const user = response.data.find(
-        (u) => u.username === userName && u.password === password
+      const user = await authService.login(
+        formData.userName,
+        formData.password
       );
 
       if (user) {
-        localStorage.setItem("isLoggedIn", "true");
-        toast.success("✅ ورود موفقیت‌آمیز بود!", {
-          position: "bottom-right",
-          autoClose: 2000,
-          icon: false,
-          closeOnClick: true,
-          theme: "colored",
-          closeButton: false,
-        });
+        if (rememberMe) {
+          localStorage.setItem("isLoggedIn", "true");
+        } else {
+          sessionStorage.setItem("isLoggedIn", "true");
+        }
+        showToast.success("✅ ورود موفقیت‌آمیز بود!");
         navigate("/panel");
       } else {
-        toast.warn(" یوزرنیم یا پسورد اشتباه است!", {
-          position: "bottom-right",
-          autoClose: 2000,
-          icon: false,
-          closeOnClick: true,
-          theme: "colored",
-          closeButton: false,
-        });
+        showToast.error("یوزرنیم یا پسورد اشتباه است!");
       }
     } catch (error) {
-      toast.warn(" خطا در ارتباط با سرور!", {
-        position: "bottom-right",
-        autoClose: 2000,
-        icon: false,
-        closeOnClick: true,
-        theme: "colored",
-        closeButton: false,
-      });
+      showToast.error(error.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const goToRegister = () => {
-    navigate("/register");
-  };
-
-  const goToForgotPassword = () => {
-    navigate("/forgot-password");
-  };
-
+  const goToRegister = () => navigate("/register");
+  const goToForgotPassword = () => navigate("/forgot-password");
 
   return (
     <div style={{ overflow: "hidden" }}>
@@ -128,18 +105,29 @@ function Login() {
           <input
             type="text"
             id="loginName"
-            value={userName}
-            onChange={(e) => setUsername(e.target.value)}
+            name="userName"
+            value={formData.userName}
+            onChange={handleInputChange}
             placeholder="Username"
           />
 
           <label htmlFor="loginPassword">Password</label>
-          <input
-            type="password"
-            id="loginPassword"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <div className="password-input-container">
+            <input
+              type={showPassword ? "text" : "password"}
+              id="loginPassword"
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
+            />
+            <button
+              type="button"
+              className="password-toggle"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? "👁️" : "👁️‍🗨️"}
+            </button>
+          </div>
 
           <div className="captcha-container">
             <p>
@@ -147,29 +135,39 @@ function Login() {
             </p>
             <input
               type="number"
-              value={captchaInput}
-              onChange={(e) => {
-                setCaptchaInput(e.target.value);
-                validateCaptcha(e.target.value);
-              }}
+              name="captchaInput"
+              value={formData.captchaInput}
+              onChange={handleInputChange}
             />
             {captchaValid === false && (
               <p style={{ color: "red" }}>کپچا اشتباه است!</p>
             )}
           </div>
 
+          <div className="remember-me">
+            <input
+              type="checkbox"
+              id="rememberMe"
+              checked={rememberMe}
+              onChange={(e) => setRememberMe(e.target.checked)}
+            />
+            <label htmlFor="rememberMe">مرا به خاطر بسپار</label>
+          </div>
+
           <div className="button-container">
             <div
-              className={`loginButton ${!captchaValid ? "disabled" : ""}`}
+              className={`loginButton ${
+                !captchaValid || isLoading ? "disabled" : ""
+              }`}
               onClick={handleLogin}
             >
-              Log in
+              {isLoading ? "در حال ورود..." : "Log in"}
             </div>
             <div className="registerButton" onClick={goToRegister}>
               Register
             </div>
             <div className="forgot-password" onClick={goToForgotPassword}>
-             فراموشی رمز عبور
+              فراموشی رمز عبور
             </div>
           </div>
         </div>

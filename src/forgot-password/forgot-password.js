@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./forget-password.css"
+import "./forget-password.css";
+import Navbar from "../navbar/Navbar";
 
 function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -34,7 +35,10 @@ function ForgotPassword() {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/reset-password", { email });
+      const response = await axios.post(
+        "http://localhost:5000/reset-password",
+        { email }
+      );
 
       if (response.data.success) {
         toast.success("✅ رمز عبور جدید به ایمیل شما ارسال شد!", {
@@ -68,25 +72,28 @@ function ForgotPassword() {
   };
 
   return (
-    <div className="form-wrap">
-      <div className="forgot-password-form">
-        <h1>Forgot Password</h1>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
-        />
-        <div className="button-container">
-          <div className="resetButton" onClick={handlePasswordReset}>
-            Reset Password
+    <>
+      <Navbar />
+      <div className="form-wrap">
+        <div className="forgot-password-form">
+          <h1>Forgot Password</h1>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email"
+          />
+          <div className="button-container">
+            <div className="resetButton" onClick={handlePasswordReset}>
+              Reset Password
+            </div>
           </div>
         </div>
+        <ToastContainer />
       </div>
-      <ToastContainer />
-    </div>
+    </>
   );
 }
 

@@ -1,91 +1,133 @@
 /* استایل کلی صفحه */
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	height: 100vh;
-	background-color: #333;
+  height: 100vh;
+  background-color: #333;
 }
 
 /* استایل فرم لاگین */
 .form-wrap {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: calc(100vh - 100px); /* کم کردن ارتفاع نوبار از صفحه */
-	background: rgb(25, 119, 204);
-	color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px); /* کم کردن ارتفاع نوبار از صفحه */
+  background: rgb(25, 119, 204);
+  color: white;
 }
 
 .login {
-	width: 380px;
-	padding: 2em;
-	border: 2px solid white;
-	text-align: center;
-	border-radius: 10px;
+  width: 380px;
+  padding: 2em;
+  border: 2px solid white;
+  text-align: center;
+  border-radius: 10px;
 }
 
 .login input {
-	background: transparent;
-	border: none;
-	border-bottom: 2px solid white;
-	width: 100%;
-	height: 40px;
-	margin: 10px 0;
-	color: white;
-	outline: none;
-	text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  width: 100%;
+  height: 40px;
+  margin: 10px 0;
+  color: white;
+  outline: none;
+  text-align: center;
 }
 
 .login h1 {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 /* دکمه‌های فرم */
 .button-container {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
 }
 
-.loginButton, .registerButton, .forgot-password {
-	height: 45px;
-	line-height: 45px;
-	border: 2px solid white;
-	cursor: pointer;
-	border-radius: 5px;
-	transition: 0.3s;
-	font-weight: bold;
-	text-align: center;
+.loginButton,
+.registerButton,
+.forgot-password {
+  height: 45px;
+  line-height: 45px;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  font-weight: bold;
+  text-align: center;
 }
 
 .loginButton {
-	background-color: #007bff;
-	color: white;
+  background-color: #007bff;
+  color: white;
 }
 
 .loginButton:hover {
-	background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .registerButton {
-	background-color: #28a745;
-	color: white;
+  background-color: #28a745;
+  color: white;
 }
 
 .registerButton:hover {
-	background-color: #218838;
+  background-color: #218838;
 }
 
 .forgot-password {
-	background-color: #ffc107;
-	color: #333;
+  background-color: #ffc107;
+  color: #333;
 }
 
 .forgot-password:hover {
-	background-color: #e0a800;
+  background-color: #e0a800;
+}
+
+.password-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.remember-me label {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.loginButton.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }

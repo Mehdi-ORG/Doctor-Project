@@ -43,7 +43,15 @@ function Appointment({ onRefresh }) {
   const clickHandler = () => {
     const { name, email, number, date, department, doctor, hour } = info;
 
-    if (!name || !email || !number || !date || !department || !doctor || !hour) {
+    if (
+      !name ||
+      !email ||
+      !number ||
+      !date ||
+      !department ||
+      !doctor ||
+      !hour
+    ) {
       toast.warn(" لطفا تمام فیلدهای مورد نیاز را پر کنید!", {
         position: "top-right",
         autoClose: 2000,

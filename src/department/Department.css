@@ -68,7 +68,7 @@
 .depart-ul .nav-item .nav-link-dep.active::after{
   content: '';
   position: absolute;
-  left:10px;
+  left:0;
   top: -10px;
   height: 120%;
   width: 2px;

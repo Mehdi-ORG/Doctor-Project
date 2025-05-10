@@ -18,16 +18,14 @@ function BottomNavbar() {
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
     setIsLoggedIn(false);
-    navigate("/"); 
+    navigate("/");
   };
 
   return (
     <>
       <div className="d-flex justify-content-around align-items-center user-select-none bottomNav sticky-top shadow-sm">
         <div className="d-flex ">
-          <div className="appointment d-none d-sm-flex order-2">
-            <Navbar.Brand>appointment</Navbar.Brand>
-          </div>
+          
           <div className="Nav order-lg-3 ">
             <Navbar expand="lg">
               <Container fluid>
