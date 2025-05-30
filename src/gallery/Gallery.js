@@ -11,6 +11,7 @@ import image8 from "../asset/image/gallery/gallery-8.jpg";
 import { memo } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ImageCard from "../components/imageCard/imageCard";
+import { useTranslation } from "react-i18next";
 
 // آرایه‌ای که لیست تصاویر را نگه می‌دارد. این متغیر خارج از تابع قرار داده شده
 // تا هر بار که Gallery رندر می‌شود، دوباره ساخته نشود
@@ -26,14 +27,16 @@ const imageData = [
 ];
 
 function Gallery() {
+  const { t } = useTranslation();
+
   return (
     <>
       <Navbar />
       <section className="section-sec">
         <div className="section-div">
           <div className="header">
-            <h2>عکس ها</h2>
-            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ است.</p>
+            <h2>{t("navigation.gallery")}</h2>
+            <p>{t("gallery.description")}</p>
           </div>
           <Container>
             <Row lg={4} md={3} xs={1} className="g-2">

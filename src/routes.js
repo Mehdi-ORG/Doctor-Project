@@ -1,4 +1,6 @@
+// فایل تنظیمات مسیریابی برنامه
 import { lazy } from "react";
+// وارد کردن کامپوننت‌های مورد نیاز
 import Doctors from "./doctors/Doctors";
 import Gallery from "./gallery/Gallery";
 import Home from "./home/Home";
@@ -8,43 +10,45 @@ import Panel from "./panel/panel";
 import Register from "./login/register";
 import ForgotPassword from "./forgot-password/forgot-password";
 
+// لود تنبل (lazy loading) کامپوننت درباره ما برای بهینه‌سازی عملکرد
 const About = lazy(() => import("./about/About"));
 
+// تعریف مسیرهای برنامه
 const routes = [
   {
-    path: "/",
+    path: "/", // مسیر صفحه اصلی
     element: <Home />,
   },
   {
-    path: "/about",
+    path: "/about", // مسیر صفحه درباره ما
     element: <About />,
   },
   {
-    path: "/service",
+    path: "/service", // مسیر صفحه خدمات
     element: <Service />,
   },
   {
-    path: "/login",
+    path: "/login", // مسیر صفحه ورود
     element: <Login />,
   },
   {
-    path: "/gallery",
+    path: "/gallery", // مسیر صفحه گالری
     element: <Gallery />,
   },
   {
-    path: "/doctors",
+    path: "/doctors", // مسیر صفحه پزشکان
     element: <Doctors />,
   },
   {
-    path: "/panel",
+    path: "/panel", // مسیر پنل کاربری
     element: <Panel />,
   },
   {
-    path: "/register",
+    path: "/register", // مسیر صفحه ثبت نام
     element: <Register />,
   },
   {
-    path: "/forgot-password",
+    path: "/forgot-password", // مسیر صفحه فراموشی رمز عبور
     element: <ForgotPassword />,
   },
 ];

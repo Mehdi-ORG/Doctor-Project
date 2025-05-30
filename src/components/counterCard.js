@@ -1,6 +1,9 @@
 import { memo } from "react";
+import { useTranslation } from "react-i18next";
 
 function CounterCard({ icon, number, place }) {
+  const { t } = useTranslation();
+
   return (
     <div>
       <div className="bg-white rounded shadow " data-aos="flip-right">
@@ -10,11 +13,12 @@ function CounterCard({ icon, number, place }) {
           data-purecounter-end={number}
           className="purecounter"
         >
-          12
+          {number}
         </h2>
-        <p>{place} </p>
+        <p>{t(place)}</p>
       </div>
     </div>
   );
 }
+
 export default memo(CounterCard);

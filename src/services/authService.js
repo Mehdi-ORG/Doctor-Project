@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "http://localhost:3001";
 
 export const authService = {
   login: async (username, password) => {
@@ -11,7 +11,7 @@ export const authService = {
       );
       return user;
     } catch (error) {
-      throw new Error("خطا در ارتباط با سرور");
+      throw new Error("Server connection error");
     }
   },
 };

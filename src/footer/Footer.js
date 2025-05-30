@@ -1,81 +1,115 @@
-import { memo } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import "./Footer.css";
+import Logo from "../components/Logo/Logo";
 
-function Footer() {
+const Footer = () => {
+  const { t } = useTranslation();
+
   return (
-    <>
-      <div className="p-5 footer border-info border-top">
-        <div className="d-flex align-items-center row mx-4">
-          <div className="p-2 col-lg-4 col-md-5">
-            <button className="fw-bold mt-4 btn d-flex align-self-right">Doctor Project</button>
-            <div className="my-4">
-              <p>خراسان رضوی , مشهد</p>
-              <p>خیابان امام خمینی</p>
-              <p className="pt-3">
-                <strong>Number: </strong>
-                <span>00989215178496</span>
-              </p>
-              <p>
-                <strong>Email: </strong>
-                <span>organji.mehdi@gmail.com</span>
-              </p>
+    <footer className="footer">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <div className="footer-about">
+              <Logo />
+              <p className="mb-4">{t("footer.description")}</p>
             </div>
             <div className="social-links">
-              <button className="px-2 fs-3 opacity-75">
-                <i className="fa-brands fa-twitter"></i>
-              </button>
-              <button className="px-2 fs-3 opacity-75">
-                <i className="fa-brands fa-x-twitter"></i>
-              </button>
-              <button className="px-2 fs-3 opacity-75">
-                <i className="fa-brands fa-instagram"></i>
-              </button>
-              <button className="px-2 fs-3 opacity-75">
-                <i className="fa-brands fa-linkedin"></i>
+              <a href="#" className="me-2">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" className="me-2">
+                <i className="fab fa-twitter"></i>
+              </a>
+              <a href="#" className="me-2">
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a href="#" className="me-2">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <div className="col-lg-2 col-md-6 mb-4 mb-md-0">
+            <h5 className="text-uppercase mb-4">{t("footer.usefulLinks")}</h5>
+            <ul className="list-unstyled">
+              <li className="mb-2">
+                <Link to="/">{t("footer.home")}</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/about">{t("footer.aboutUs")}</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/services">{t("footer.services")}</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/terms">{t("footer.termsOfService")}</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/privacy">{t("footer.privacyPolicy")}</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="col-lg-2 col-md-6 mb-4 mb-md-0">
+            <h5 className="text-uppercase mb-4">{t("footer.ourServices")}</h5>
+            <ul className="list-unstyled">
+              <li className="mb-2">
+                <Link to="/services/cardiology">{t("footer.cardiology")}</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/services/neurology">{t("footer.neurology")}</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/services/hepatology">{t("footer.hepatology")}</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/services/pediatrics">{t("footer.pediatrics")}</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/services/eye-care">{t("footer.eyeCare")}</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="col-lg-4 col-md-6">
+            <h5 className="text-uppercase mb-4">{t("footer.newsletter")}</h5>
+            <p className="mb-4">{t("footer.newsletterDescription")}</p>
+            <div className="input-group mb-3">
+              <input
+                type="email"
+                className="form-control"
+                placeholder={t("footer.enterEmail")}
+                aria-label="Email"
+              />
+              <button className="btn btn-primary" type="button">
+                {t("footer.subscribe")}
               </button>
             </div>
           </div>
-          <div className="col-lg-2 col-md-3">
-            <h5 className="fw-bold">لینک های مفید</h5>
-            <button className="btn-link">home</button>
-            <button className="btn-link">about us</button>
-            <button className="btn-link">service</button>
-            <button className="btn-link">term of us</button>
-            <button className="btn-link">privacy policy</button>
-          </div>
-          <div className="col-lg-2 col-md-3">
-            <h5 className="fw-bold">لینک های مفید</h5>
-            <button className="btn-link">home</button>
-            <button className="btn-link">about us</button>
-            <button className="btn-link">service</button>
-            <button className="btn-link">term of us</button>
-            <button className="btn-link">privacy policy</button>
-          </div>
-          <div className="col-lg-2 col-md-3">
-            <h5 className="fw-bold">لینک های مفید</h5>
-            <button className="btn-link">home</button>
-            <button className="btn-link">about us</button>
-            <button className="btn-link">service</button>
-            <button className="btn-link">term of us</button>
-            <button className="btn-link">privacy policy</button>
-          </div>
-          <div className="col-lg-2 col-md-3">
-            <h5 className="fw-bold">لینک های مفید</h5>
-            <button className="btn-link">home</button>
-            <button className="btn-link">about us</button>
-            <button className="btn-link">service</button>
-            <button className="btn-link">term of us</button>
-            <button className="btn-link">privacy policy</button>
-          </div>
         </div>
-        <hr />
-        <div className="footer-bottom text-center my-4">
-          <p>@Copyright کلیه حقوق کپی رایت محفوظ است</p>
-          <p>طراحی شده توسط مهدی اٌرگنجی Bootstrap React</p>
+
+        <hr className="my-4" />
+
+        <div className="row">
+          <div className="col-md-6 text-center text-md-start">
+            <p className="mb-0">
+              © {new Date().getFullYear()} {t("footer.copyright")}.{" "}
+              {t("footer.allRightsReserved")}
+            </p>
+          </div>
+          <div className="col-md-6 text-center text-md-end">
+            <p className="mb-0">
+              {t("footer.designedBy")}{" "}
+              <a href="#">{t("footer.designerName")}</a>
+            </p>
+          </div>
         </div>
       </div>
-    </>
+    </footer>
   );
-}
+};
 
-export default memo(Footer);
+export default Footer;

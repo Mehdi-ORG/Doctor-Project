@@ -1,8 +1,8 @@
-.container-fluid{
-  background-color: #f1f7fc;
+.container-fluid {
+  background-color: transparent;
 }
 
-.fa-solid{
+.fa-solid {
   color: rgb(40, 95, 255);
   padding-left: 30px;
   font-size: 40px;
@@ -10,13 +10,114 @@
   margin: -25px;
   padding: 0;
 }
-.shadow{
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
+.shadow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-h2{
+h2 {
   padding-top: 60px;
   padding-bottom: 20px;
+}
+
+.counter-section {
+  padding: 60px 0;
+  background: transparent;
+}
+
+.counter-box {
+  text-align: center;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+  height: 270px !important;
+  min-height: 270px !important;
+  max-height: 270px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: start !important;
+}
+
+.counter-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+}
+
+.counter-box i {
+  font-size: 42px;
+  color: #1977cc;
+  margin-bottom: 20px;
+}
+
+.counter-box span {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2c4964;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.counter-box p {
+  font-size: 18px;
+  color: #6c757d;
+  margin: 0;
+  font-weight: 500;
+  flex-grow: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Animation styles */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
+
+[data-aos="fade-up"] {
+  transform: translateY(20px);
+}
+
+[data-aos="fade-up"].aos-animate {
+  transform: translateY(0);
+}
+
+/* Responsive styles */
+@media (max-width: 992px) and (min-width: 769px) {
+  .counter-box {
+    margin-bottom: 1.5rem !important; /* کاهش فاصله از 2rem به 1.5rem */
+  }
+
+  .col-md-6:last-child .counter-box,
+  .col-md-6:nth-last-child(2) .counter-box {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .counter-box {
+    margin-bottom: 30px;
+    height: 240px !important;
+    min-height: 240px !important;
+    max-height: 240px !important;
+  }
+
+  .counter-box i {
+    font-size: 36px;
+  }
+
+  .counter-box span {
+    font-size: 30px;
+  }
+
+  .counter-box p {
+    font-size: 16px;
+  }
 }

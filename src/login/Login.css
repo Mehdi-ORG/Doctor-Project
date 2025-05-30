@@ -15,17 +15,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 100px); /* کم کردن ارتفاع نوبار از صفحه */
+  min-height: calc(100vh - 100px); /* تغییر از height به min-height */
+  padding: 20px 0; /* اضافه کردن padding برای فاصله از بالا و پایین */
   background: rgb(25, 119, 204);
   color: white;
 }
 
 .login {
   width: 380px;
-  padding: 2em;
+  padding: 1.5em; /* کاهش padding از 2em به 1.5em */
   border: 2px solid white;
   text-align: center;
   border-radius: 10px;
+}
+
+.login h1 {
+  margin-bottom: 0.8em; /* کاهش فاصله از 1em به 0.8em */
+  font-size: 1.8rem; /* تنظیم سایز فونت عنوان */
+}
+
+.login label {
+  font-size: 0.9rem; /* تنظیم سایز فونت برچسب‌ها */
+  display: block;
+  margin-bottom: 0.3em; /* کاهش فاصله بین برچسب و فیلد ورودی */
 }
 
 .login input {
@@ -33,36 +45,34 @@ body {
   border: none;
   border-bottom: 2px solid white;
   width: 100%;
-  height: 40px;
-  margin: 10px 0;
+  height: 35px; /* کاهش ارتفاع از 40px به 35px */
+  margin: 8px 0; /* کاهش فاصله از 10px به 8px */
   color: white;
   outline: none;
   text-align: center;
-}
-
-.login h1 {
-  margin-bottom: 1em;
+  font-size: 0.9rem; /* تنظیم سایز فونت فیلدهای ورودی */
 }
 
 /* دکمه‌های فرم */
 .button-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 15px;
+  gap: 8px; /* کاهش فاصله بین دکمه‌ها از 10px به 8px */
+  margin-top: 12px; /* کاهش فاصله از 15px به 12px */
 }
 
 .loginButton,
 .registerButton,
 .forgot-password {
-  height: 45px;
-  line-height: 45px;
+  height: 40px; /* کاهش ارتفاع از 45px به 40px */
+  line-height: 40px; /* تنظیم line-height متناسب با ارتفاع جدید */
   border: 2px solid white;
   cursor: pointer;
   border-radius: 5px;
   transition: 0.3s;
   font-weight: bold;
   text-align: center;
+  font-size: 0.9rem; /* تنظیم سایز فونت دکمه‌ها */
 }
 
 .loginButton {
@@ -99,35 +109,64 @@ body {
 
 .password-toggle {
   position: absolute;
-  right: 10px;
+  right: 8px; /* کاهش فاصله از 10px به 8px */
   top: 50%;
   transform: translateY(-50%);
   background: none;
   border: none;
   cursor: pointer;
-  padding: 5px;
-  font-size: 16px;
+  padding: 4px; /* کاهش padding از 5px به 4px */
+  font-size: 14px; /* کاهش سایز آیکون از 16px به 14px */
 }
 
 .remember-me {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin: 10px 0;
+  gap: 6px; /* کاهش فاصله از 8px به 6px */
+  margin: 8px 0; /* کاهش فاصله از 10px به 8px */
+  font-size: 0.9rem; /* تنظیم سایز فونت */
 }
 
 .remember-me input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
+  width: 14px; /* کاهش اندازه از 16px به 14px */
+  height: 14px;
   cursor: pointer;
 }
 
 .remember-me label {
   cursor: pointer;
-  font-size: 14px;
 }
 
 .loginButton.disabled {
   opacity: 0.7;
   cursor: not-allowed;
+}
+
+/* استایل بخش کپچا */
+.captcha-container {
+  margin: 12px 0;
+}
+
+.captcha-container p {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+/* مخفی کردن فلش‌های input number */
+.captcha-container input[type="number"]::-webkit-inner-spin-button,
+.captcha-container input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.captcha-container input[type="number"] {
+  -moz-appearance: textfield; /* برای فایرفاکس */
+}
+
+/* استایل پیام خطای کپچا */
+.captcha-container p[style*="color: red"] {
+  font-size: 0.85rem;
+  margin-top: 8px;
+  color: #ff6b6b !important;
 }

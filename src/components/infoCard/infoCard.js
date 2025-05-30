@@ -8,6 +8,7 @@ import { BsCalendar2DateFill } from "react-icons/bs";
 import { FaClinicMedical } from "react-icons/fa";
 import { FaHandHoldingMedical } from "react-icons/fa6";
 import { memo } from "react";
+import { useTranslation } from "react-i18next";
 
 function InfoCard({
   name,
@@ -20,19 +21,21 @@ function InfoCard({
   id,
   onDelete,
 }) {
+  const { t } = useTranslation();
+
   const deleteHandler = () => {
     Swal.fire({
-      title: "آیا مطمئن هستید؟",
-      text: "این عملیات قابل بازگشت نیست!",
+      title: t("messages.deleteConfirm.title"),
+      text: t("messages.deleteConfirm.text"),
       icon: "warning",
       showCancelButton: true,
-      confirmButtonText: "بله، حذف کن",
-      cancelButtonText: "لغو",
+      confirmButtonText: t("messages.deleteConfirm.confirm"),
+      cancelButtonText: t("messages.deleteConfirm.cancel"),
     }).then((result) => {
       if (result.isConfirmed) {
         onDelete(id);
         Swal.fire({
-          title: "حذف نوبت انجام شد",
+          title: t("messages.deleteSuccess.title"),
           timer: 1500,
           timerProgressBar: true,
           showConfirmButton: false,
@@ -45,31 +48,38 @@ function InfoCard({
     <Card className="shadow border-0">
       <Card.Body>
         <Card.Title>
-          <span> نام بیمار: {name} </span>
+          <span>
+            {t("panel.patientName")}: {name}
+          </span>
         </Card.Title>
         <hr />
         <Card.Text>
           <span className="py-1 d-block">
-            <FaUserDoctor color="blue" size="20px" /> نام پزشک: {doctor}
+            <FaUserDoctor color="blue" size="20px" /> {t("panel.doctor")}:{" "}
+            {doctor}
           </span>
           <span className="py-1 d-block">
-            <FaHandHoldingMedical color="blue" size="20px" /> تخصص: {department}
+            <FaHandHoldingMedical color="blue" size="20px" />{" "}
+            {t("panel.department")}: {department}
           </span>
           <span className="py-1 d-block">
-            <MdEmail color="blue" size="20px" /> ایمیل: {email}
+            <MdEmail color="blue" size="20px" /> {t("common.email")}: {email}
           </span>
           <span className="py-1 d-block">
-            <IoCallSharp color="blue" size="20px" /> شماره تماس: {number}
+            <IoCallSharp color="blue" size="20px" /> {t("common.phone")}:{" "}
+            {number}
           </span>
           <span className="py-1 d-block">
-            <BsCalendar2DateFill color="blue" size="20px" /> تاریخ ویزیت: {date}
+            <BsCalendar2DateFill color="blue" size="20px" />{" "}
+            {t("panel.appointmentDate")}: {date}
           </span>
           <span className="py-1 d-block">
-            <FaClinicMedical color="blue" size="20px" /> علت مراجعه: {notes}
+            <FaClinicMedical color="blue" size="20px" /> {t("panel.reason")}:{" "}
+            {notes}
           </span>
         </Card.Text>
         <Button variant="outline-danger" onClick={deleteHandler}>
-          حذف نوبت
+          {t("panel.deleteAppointment")}
         </Button>
       </Card.Body>
     </Card>

@@ -1,27 +1,18 @@
 .fa-solid {
   color: rgb(40, 95, 255);
-  padding-left: 30px;
   font-size: 45px;
-  padding-bottom: 10px;
 }
 
 p {
   font-size: 15px;
-  text-align: justify;
+  margin-bottom: 0;
 }
 
 .div-image {
   background-clip: border-box;
 }
-.ul {
-  padding: 0;
-}
 
-.counter {
-  background-color: #f1f7fc;
-}
-
-.p-0 {
+.about .p-0 {
   margin-top: -35px;
 }
 
@@ -42,7 +33,6 @@ p {
   }
 
   .fa-solid {
-    padding-left: 15px;
     font-size: 35px;
   }
 
@@ -50,13 +40,7 @@ p {
     padding: 15px;
   }
 
-  .my-4 {
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
-  }
-
-  .my-5 {
-    margin-top: 1rem !important;
+  .mb-5 {
     margin-bottom: 1rem !important;
   }
 }
@@ -73,11 +57,52 @@ p {
   }
 
   .fa-solid {
-    padding-left: 10px;
     font-size: 30px;
   }
 
   .container-div {
     padding: 10px;
   }
+}
+
+/* RTL specific styles */
+[dir="rtl"] .col-lg-6 {
+  direction: rtl !important;
+}
+
+[dir="rtl"] .col-lg-6 p,
+[dir="rtl"] .col-lg-6 h2,
+[dir="rtl"] .col-lg-6 h5 {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .list-unstyled li {
+  direction: rtl !important;
+}
+
+[dir="rtl"] .d-flex.flex-row-reverse {
+  direction: rtl !important;
+}
+
+[dir="rtl"] .flex-grow-1 {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .fa-solid {
+  margin-left: 0.75rem !important;
+  margin-right: 0 !important;
+}
+
+/* LTR specific styles */
+.text-start {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+.text-start h5,
+.text-start p {
+  text-align: left !important;
+  direction: ltr !important;
 }

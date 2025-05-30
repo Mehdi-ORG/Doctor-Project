@@ -1,96 +1,144 @@
-*{
-  font-family: 'iransans';
+* {
+  font-family: "iransans";
   box-sizing: border-box;
   text-decoration: none;
 }
-.nav-link{
+.nav-link {
   position: relative;
 }
-.nav-link::after{
-  content:'';
+.nav-link::after {
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0;
   height: 3px;
-  background-color:  rgb(46, 134, 249);
+  background-color: rgb(46, 134, 249);
   transition: width 0.6s ease;
 }
-.nav-link:hover::after{
+.nav-link:hover::after {
   width: 100%;
 }
 
-.nav-drop-item{
+.nav-drop-item {
   text-decoration: none;
   position: relative;
 }
 
-.nav-drop-item::after{
+.nav-drop-item::after {
   display: none;
 }
 
-.bottomNav{
-  padding: 0;
+.bottomNav {
+  padding: 15px 0;
   margin: 0;
   background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  min-height: 70px;
 }
 
-.appointment{
+.appointment {
   width: auto;
   height: 30px;
   line-height: 30px;
   margin: 4px;
-  padding:0 25px;
+  padding: 0 25px;
   margin-top: 12px;
   background-color: rgb(46, 134, 249);
   border-radius: 30px;
 }
 
- .navbar-toggler-icon{
-  --bs-navbar-toggler-icon-bg:url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27%3e%3cpath stroke=%27rgba%2846, 134, 249, 1%29%27 stroke-linecap=%27round%27 stroke-miterlimit=%2710%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/%3e%3c/svg%3e")
+.navbar-toggler {
+  display: none;
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000;
 }
 
-.navbar-toggler{
-  --bs-navbar-color: rgb(255, 255, 255);
-  --bs-navbar-toggler-border-color: rgb(255, 255, 255);
+.navbar-toggler-icon {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #1977cc;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.label{
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: #1977cc;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+  top: -8px;
+}
+
+.navbar-toggler-icon::after {
+  bottom: -8px;
+}
+
+.navbar-toggler.active .navbar-toggler-icon {
+  background-color: transparent;
+}
+
+.navbar-toggler.active .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navbar-toggler.active .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  bottom: 0;
+}
+
+.label {
   width: auto;
   height: 50px;
   line-height: 50px;
-  font-family: 'lalezar ';
+  font-family: "lalezar ";
 }
 
-.active .hover{
+.active .hover {
   color: red;
 }
 
-.nav-back{
-  background-color: white;
+.nav-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
 }
 
-.dropdown-toggle::after{
+.dropdown-toggle::after {
   border: 0 !important;
 }
 
-.label .login.navlink{
+.label .login.navlink {
   text-decoration: none;
   color: rgb(105, 105, 105);
   border: none;
 }
 
-.label .login.navlink:hover{
-  color: black! important;
+.label .login.navlink:hover {
+  color: black !important;
 }
 
-.active-link{
+.active-link {
   color: rgb(0, 0, 0);
   border: none;
 }
 
-.container-fluid{
-  padding: 0! important;
+.container-fluid {
+  padding: 0 !important;
 }
 
 .label .logout-button {
@@ -102,4 +150,688 @@
 
 .label .logout-button:hover {
   color: black !important;
+}
+
+/* استایل‌های مشترک برای هر سه بخش */
+.navbar-brand-section,
+.navbar-links-section,
+.navbar-auth-section {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* بخش لوگو */
+.navbar-brand-section {
+  flex: 0 0 auto;
+  padding-right: 20px;
+}
+
+/* بخش لینک‌ها */
+.navbar-links-section {
+  flex: 1;
+  justify-content: center;
+}
+
+/* بخش login */
+.navbar-auth-section {
+  flex: 0 0 auto;
+  padding-left: 20px;
+}
+
+/* استایل‌های لینک‌ها */
+.nav-link {
+  position: relative;
+  color: #2c4964;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #1977cc;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active-link {
+  color: #1977cc;
+}
+
+.nav-link.active-link::after {
+  width: 100%;
+}
+
+/* استایل‌های دکمه login/logout */
+.login.navlink,
+.logout-button {
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 0.95rem;
+  min-width: 80px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #2c4964;
+  width: auto !important;
+}
+
+.login.navlink:hover,
+.logout-button:hover {
+  color: #1977cc;
+}
+
+/* استایل‌های dropdown */
+.nav-drop-item {
+  color: #2c4964;
+  font-weight: 500;
+}
+
+.nav-drop-item:hover {
+  color: #1977cc;
+}
+
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.dropdown-item {
+  padding: 8px 20px;
+  color: #2c4964;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(25, 119, 204, 0.05);
+  color: #1977cc;
+}
+
+/* استایل‌های مشترک برای دکمه‌ها */
+.navbar-toggler,
+.login.navlink,
+.logout-button {
+  height: 40px;
+  min-width: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* استایل محتوای داخل لینک */
+.login.navlink span,
+.logout-button span {
+  padding: 0 20px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+/* نسخه موبایل */
+@media (max-width: 991px) {
+  .bottomNav {
+    padding: 15px 0;
+    min-height: 80px;
+  }
+
+  .container-fluid {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .container-fluid > div {
+    padding: 0 15px;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  /* مخفی کردن لوگو در حالت موبایل */
+  .navbar-brand-section {
+    display: none;
+  }
+
+  /* تنظیم موقعیت دکمه همبرگر */
+  .navbar-toggler {
+    display: inline-flex;
+    order: 1;
+    margin: 0;
+    padding: 0 15px;
+    background: rgba(25, 119, 204, 0.05);
+    border-radius: 8px;
+    width: auto;
+  }
+
+  .navbar-toggler:hover {
+    background: rgba(25, 119, 204, 0.1);
+  }
+
+  /* تنظیم موقعیت دکمه لاگین */
+  .navbar-auth-section {
+    order: 2;
+    margin: 0;
+    padding: 0 !important; /* Override padding in mobile */
+    width: auto;
+  }
+
+  .login.navlink,
+  .logout-button {
+    border-radius: 8px;
+    padding: 0 15px;
+  }
+
+  /* تنظیم موقعیت بخش لینک‌ها */
+  .navbar-links-section {
+    position: fixed !important;
+    top: 50px !important;
+    right: 60px !important;
+    transform: translateX(0) scale(0.95) !important;
+    width: auto !important;
+    min-width: 280px !important;
+    max-width: 320px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    z-index: 999 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    height: auto !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+  }
+
+  .navbar-links-section::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgb(245, 245, 245) !important;
+    background: linear-gradient(
+      135deg,
+      rgb(222, 222, 222) 0%,
+      rgb(24, 126, 215) 100%
+    ) !important;
+    border-radius: 20px !important;
+    z-index: -1 !important;
+    box-shadow: 0 8px 32px rgba(25, 119, 204, 0.15) !important;
+  }
+
+  .navbar-links-section.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(0) scale(1) !important;
+  }
+
+  .navbar-links-section .nav-back {
+    padding: 40px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* تنظیم استایل dropdown menu */
+  .navbar-links-section .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 4px 0 0 0 !important;
+    display: none !important;
+  }
+
+  .navbar-links-section .dropdown-menu.show {
+    display: block !important;
+  }
+
+  /* تنظیم استایل آیتم‌های dropdown */
+  .navbar-links-section .dropdown-item {
+    padding: 12px 16px !important;
+    color: rgb(255, 255, 255) !important;
+    text-align: center !important;
+    transition: all 0.2s ease !important;
+    margin: 0 !important;
+    background: transparent !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .navbar-links-section .dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* تنظیم استایل لینک‌ها در منوی موبایل */
+  .navbar-links-section .nav-link,
+  .navbar-links-section .nav-drop-item {
+    color: rgb(5, 5, 5) !important;
+    padding: 12px 16px !important;
+    transition: all 0.2s ease !important;
+    background: transparent !important;
+    width: 100% !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  .navbar-links-section .nav-link:hover,
+  .navbar-links-section .nav-drop-item:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* تنظیم overlay */
+  .navbar-links-section::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: -1;
+  }
+
+  .navbar-links-section.show::before {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* تنظیم موقعیت container برای dropdown */
+  .navbar-links-section .nav-drop-item {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* تنظیم استایل dropdown menu */
+  .navbar-links-section .dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 4px 0 0 0 !important;
+    display: none;
+  }
+
+  .navbar-links-section .dropdown-menu.show {
+    display: block !important;
+  }
+
+  /* تنظیم استایل آیتم‌های dropdown */
+  .navbar-links-section .dropdown-item {
+    padding: 12px 16px !important;
+    color: rgb(9, 9, 9) !important;
+    text-align: center !important;
+    transition: all 0.2s ease !important;
+    margin: 0 !important;
+    background: transparent !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .navbar-links-section .dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* تنظیم استایل container برای dropdown */
+  .navbar-links-section .nav-drop-item {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* تنظیم استایل دکمه dropdown */
+  .navbar-links-section .nav-drop-item.dropdown-toggle {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 12px 16px !important;
+    background: transparent !important;
+    border-radius: 20px !important;
+  }
+
+  .navbar-links-section .nav-drop-item.dropdown-toggle:hover,
+  .navbar-links-section .nav-drop-item.dropdown-toggle.show {
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* تنظیم استایل div اصلی */
+  .navbar-links-section {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 40px 20px !important;
+  }
+
+  .navbar-links-section.show {
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* تنظیم استایل container برای dropdown */
+  .navbar-links-section .nav-back {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  /* تنظیم استایل فلش dropdown */
+  .navbar-links-section .dropdown-toggle::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 8px;
+    vertical-align: middle;
+    border-top: 6px solid rgb(255, 255, 255);
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    border-bottom: 0;
+    transition: transform 0.2s ease;
+  }
+
+  /* چرخش فلش در حالت باز بودن dropdown */
+  .navbar-links-section .dropdown-toggle.show::after {
+    transform: rotate(180deg);
+  }
+
+  /* تنظیم RTL */
+  [dir="rtl"] .navbar-links-section .dropdown-toggle::after {
+    margin-left: 0;
+    margin-right: 8px;
+  }
+
+  /* تنظیم hover برای dropdown */
+  .navbar-links-section .dropdown-toggle:hover::after {
+    opacity: 1;
+  }
+
+  .navbar-links-section .dropdown-toggle:hover::before {
+    background-color: rgb(255, 255, 255);
+  }
+
+  /* تنظیم استایل دکمه همبرگر */
+  .navbar-toggler {
+    background: rgba(25, 119, 204, 0.05);
+    border-radius: 8px;
+    padding: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .navbar-toggler:hover {
+    background: rgba(25, 119, 204, 0.1);
+  }
+
+  .navbar-toggler-icon {
+    width: 18px;
+    height: 2px;
+    background-color: #1977cc;
+  }
+
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    width: 18px;
+    height: 2px;
+    background-color: #1977cc;
+  }
+
+  .navbar-toggler-icon::before {
+    top: -5px;
+  }
+
+  .navbar-toggler-icon::after {
+    bottom: -5px;
+  }
+
+  .navbar-brand-section,
+  .navbar-links-section,
+  .navbar-auth-section {
+    padding: 0 10px;
+  }
+
+  .nav-back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 12px 0;
+    width: 100%;
+    text-align: center;
+    color: #2c4964;
+    font-weight: 500;
+  }
+
+  .nav-drop-item {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  /* نسخه تیره برای موبایل */
+  .dark-mode .navbar-links-section {
+    background: rgb(25, 119, 204);
+    background: linear-gradient(
+      135deg,
+      rgb(25, 119, 204) 0%,
+      rgb(13, 71, 161) 100%
+    );
+  }
+
+  .dark-mode .navbar-links-section .nav-link,
+  .dark-mode .navbar-links-section .nav-drop-item,
+  .dark-mode .navbar-links-section .dropdown-item {
+    color: rgb(255, 255, 255);
+  }
+
+  .dark-mode .navbar-links-section .nav-link:hover,
+  .dark-mode .navbar-links-section .nav-drop-item:hover,
+  .dark-mode .navbar-links-section .dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* تنظیم موقعیت در حالت RTL */
+  [dir="rtl"] .navbar-links-section {
+    right: auto;
+    left: 70px;
+  }
+}
+
+/* نسخه دسکتاپ */
+@media (min-width: 992px) {
+  .navbar-toggler {
+    display: none;
+  }
+
+  .container-fluid {
+    padding: 0 15px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .container-fluid > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .navbar-brand-section {
+    padding: 0;
+    margin-right: 20px;
+    flex: 0 0 auto;
+  }
+
+  .navbar-auth-section {
+    padding: 0;
+    margin-left: 20px;
+    flex: 0 0 auto;
+  }
+
+  .navbar-links-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* تنظیم فاصله‌ها در دسکتاپ RTL */
+  [dir="rtl"] .container-fluid {
+    padding: 0 30px;
+  }
+
+  [dir="rtl"] .navbar-brand-section {
+    padding: 0;
+    margin-right: 0;
+    margin-left: 20px;
+  }
+
+  [dir="rtl"] .navbar-auth-section {
+    padding: 0;
+    margin-left: 0;
+    margin-right: 20px;
+  }
+}
+
+/* نسخه RTL */
+[dir="rtl"] .navbar-brand-section {
+  padding: 0;
+}
+
+[dir="rtl"] .navbar-auth-section {
+  padding: 0;
+}
+
+[dir="rtl"] .nav-link::after {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .dropdown-menu {
+  text-align: right;
+}
+
+/* تنظیم موقعیت دکمه‌ها در RTL */
+[dir="rtl"] .container-fluid > div {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .navbar-toggler {
+  order: 2;
+}
+
+[dir="rtl"] .navbar-auth-section {
+  order: 1;
+}
+
+[dir="rtl"] .login.navlink,
+[dir="rtl"] .logout-button {
+  border-radius: 8px;
+}
+
+/* نسخه تیره */
+.dark-mode .bottomNav {
+  background-color: #1a1a1a;
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .nav-link {
+  color: #fff;
+}
+
+.dark-mode .nav-link:hover,
+.dark-mode .nav-link.active-link {
+  color: #1977cc;
+}
+
+.dark-mode .login.navlink,
+.dark-mode .logout-button {
+  color: #fff;
+}
+
+.dark-mode .login.navlink:hover,
+.dark-mode .logout-button:hover {
+  color: #1977cc;
+}
+
+.dark-mode .dropdown-menu {
+  background-color: #1a1a1a;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .dropdown-item {
+  color: #fff;
+}
+
+.dark-mode .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .navbar-links-section {
+  background: rgba(26, 26, 26, 0.98);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .nav-link,
+.dark-mode .nav-drop-item,
+.dark-mode .dropdown-item {
+  color: #fff;
+}
+
+.dark-mode .navbar-toggler,
+.dark-mode .login.navlink,
+.dark-mode .logout-button {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .navbar-toggler:hover,
+.dark-mode .login.navlink:hover,
+.dark-mode .logout-button:hover {
+  background: rgba(255, 255, 255, 0.1);
 }

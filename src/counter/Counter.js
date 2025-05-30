@@ -1,30 +1,78 @@
 import { useEffect, memo } from "react";
 import "./Counter.css";
-import * as PureCounter from "@srexi/purecounterjs";
+import CountUp from "react-countup";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { Col, Row, Container } from "react-bootstrap";
-import CounterCard from "../components/counterCard";
-import { counterInfo } from "../data"; // مستقیم روی همین ها مپ زدیم
+import { useTranslation } from "react-i18next";
 
 function Counter() {
+  const { t } = useTranslation();
+
   useEffect(() => {
-    if (typeof PureCounter === "function") {
-      new PureCounter();
-    }
-    AOS.init();
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100,
+    });
   }, []);
 
+  const counterData = [
+    {
+      icon: "fas fa-user-md",
+      end: 85,
+      text: t("counter.doctors"),
+      delay: "100",
+    },
+    {
+      icon: "fas fa-hospital",
+      end: 18,
+      text: t("counter.departments"),
+      delay: "200",
+    },
+    {
+      icon: "fas fa-flask",
+      end: 12,
+      text: t("counter.researchLabs"),
+      delay: "300",
+    },
+    {
+      icon: "fas fa-award",
+      end: 150,
+      text: t("counter.awards"),
+      delay: "400",
+    },
+  ];
+
   return (
-    <Container>
-      <Row xs={1} md={2} lg={3} xl={4} className="gy-5">
-        {counterInfo.map((counter) => (
-          <Col key={counter.id}>
-            <CounterCard {...counter} />
-          </Col>
-        ))}
-      </Row>
-    </Container>
+    <section className="counter-section">
+      <div className="container">
+        <div className="row">
+          {counterData.map((item, index) => (
+            <div
+              key={index}
+              className="col-lg-3 col-md-6"
+              data-aos="fade-up"
+              data-aos-delay={item.delay}
+            >
+              <div className="counter-box">
+                <i className={item.icon}></i>
+                <span>
+                  <CountUp
+                    end={item.end}
+                    duration={2.5}
+                    enableScrollSpy
+                    scrollSpyOnce
+                    scrollSpyDelay={200}
+                  />
+                  +
+                </span>
+                <p>{item.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 

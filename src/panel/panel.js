@@ -1,14 +1,14 @@
 import "./panel.css";
 import Navbar from "../navbar/Navbar";
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Swal from "sweetalert2";
-
-export const LanguageContext = createContext();
+import { LanguageContext } from "../LanguageContext";
 
 function Panel() {
   const { t, i18n } = useTranslation();
+  const { language, changeLanguage, direction } = useContext(LanguageContext);
   const navigate = useNavigate();
   const [isAllowed, setIsAllowed] = useState(false);
 
@@ -17,17 +17,17 @@ function Panel() {
 
     if (!isLoggedIn) {
       Swal.fire({
-        title: "دسترسی محدود!",
-        text: "لطفا ابتدا وارد وبسایت شوید و یا ثبت نام کنید.",
+        title: t("messages.accessDenied"),
+        text: t("messages.pleaseLogin"),
         icon: "warning",
-        confirmButtonText: "باشه",
-      }).then(() => {
-        navigate("/login");
+        confirmButtonText: t("common.ok"),
       });
+      navigate("/login");
+      return;
     } else {
       setIsAllowed(true);
     }
-  }, [navigate]);
+  }, [navigate, t]);
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem("language");
@@ -36,24 +36,13 @@ function Panel() {
     }
   }, [i18n]);
 
-  const changeLanguage = (lang) => {
-    i18n.changeLanguage(lang);
-    localStorage.setItem("lang", lang);
-  };
-
-
-
-  const ltrLanguages = ["en", "fr"];
-  const direction = ltrLanguages.includes(i18n.language) ? "ltr" : "rtl";
-
   if (!isAllowed) return null;
 
   return (
-    <LanguageContext.Provider value={changeLanguage}>
-      <div>
-     <Navbar/>
+    <div>
+      <Navbar />
       <div className="panel-content" style={{ direction }}>
-        <h1 className="text-center p-5">{t("welcome")}</h1>
+        <h1 className="text-center p-5">{t("common.welcome")}</h1>
         <p>{t("panelDescriptionLine1")}</p>
         <p>{t("panelDescriptionLine2")}</p>
         <p>{t("panelDescriptionLine3")}</p>
@@ -63,7 +52,6 @@ function Panel() {
         <p>{t("panelDescriptionLine7")}</p>
       </div>
     </div>
-    </LanguageContext.Provider>
   );
 }
 

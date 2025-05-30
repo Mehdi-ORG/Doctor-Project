@@ -5,9 +5,10 @@ import TopNavbar from "./Top Navbar/TopNavbar";
 function Navbar() {
   return (
     <>
-      <TopNavbar/>
+      <TopNavbar />
       <BottomNavbar />
     </>
   );
 }
+
 export default memo(Navbar);
