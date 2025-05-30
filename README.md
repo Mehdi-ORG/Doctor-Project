@@ -1,70 +1,96 @@
-# سامانه مدیریت نوبت‌دهی پزشکی
+# 🩺 Doctor Appointment Management System
 
-این پروژه یک سامانه وب برای مدیریت نوبت‌دهی پزشکی است که شامل قابلیت‌های ثبت‌نام، ورود کاربران، و مدیریت نوبت‌ها می‌باشد. طراحی و پیاده‌سازی این سیستم با استفاده از تکنولوژی‌های مدرن وب مانند React انجام شده و با بهینه‌سازی عملکرد و تجربه کاربری مطلوب، کاربر را قادر می‌سازد تا به راحتی نوبت‌های پزشکی خود را مدیریت کند.
+A multilingual web-based system for managing doctor appointments, built with React. The app supports user registration, login, appointment management, and more. Designed with performance optimization and user experience in mind.
 
-## ویژگی‌ها:
-✔ مدیریت نوبت‌دهی: کاربران می‌توانند نوبت‌های پزشکی خود را ثبت و مدیریت کنند
+🌐 [Live Demo (Netlify)](https://doctor-project-mehdi-org.netlify.app)  
+🎥 [YouTube Demo](https://youtu.be/GaxFLsggCO0)
 
-✔ ثبت‌نام و ورود کاربران: با اعتبارسنجی قوی (شامل جلوگیری از تکرار ایمیل و نام کاربری).
+---
 
-✔ پشتیبانی از چندزبان: فارسی، انگلیسی، عربی و فرانسوی.
+## 🚀 Features
 
-✔ بهینه‌سازی عملکرد: استفاده از React.memo و useCallback برای جلوگیری از رندرهای غیرضروری.
+- ✅ **Appointment Management**: Create, update, delete, and view appointments
+- ✅ **User Authentication**: Secure signup/login with validation (no duplicate usernames/emails)
+- ✅ **Multilingual**: Persian, English, Arabic, and French
+- ✅ **Optimized Rendering**: Uses `React.memo`, `useCallback`, `useMemo` for performance
+- ✅ **Enhanced UX**: Includes loading spinner, toast notifications (React Toastify), SweetAlert2 confirmation
+- ✅ **Responsive UI** with RTL support and modern design
 
-✔ تجربه کاربری بهبود‌یافته: شامل اسپینر و پیغام‌های توست (React Toastify).
+---
 
-## فناوری‌ها:
-فرانت‌اند: React.js | CSS | Bootstrap
+## ⚙️ Technologies Used
 
-مدیریت وضعیت: Context API
+- **Frontend**: React.js, CSS, Bootstrap
+- **State Management**: Context API
+- **Validation**: RegEx (custom patterns)
+- **API Integration**: Axios, Fetch API
+- **Performance**: React.memo, useCallback, useMemo
+- **UX/UI Enhancements**: Framer Motion, React Toastify, SweetAlert2
 
-اعتبارسنجی: RegEx
+---
 
-یکپارچگی API: Fetch API | Axios
+## 📌 Challenges & Achievements
 
-بهینه‌سازی عملکرد: React.memo | useMemo
+- 🔍 Form Optimization: Reduced unnecessary re-renders, better performance
+- 🌍 Dynamic Multilingual Support: Languages loaded dynamically
+- 🧠 State Management Mastery: Used Context API for scalable and clean global state
 
-## چالش‌ها و دستاوردها:
-✅ بهینه‌سازی فرم‌ها: جلوگیری از رندرهای غیرضروری و بهبود عملکرد.
+---
 
-✅ یادگیری مدیریت State پیشرفته: استفاده از Context API برای مدیریت وضعیت در سطح اپلیکیشن.
+## 🧪 How to Run Locally
 
-✅ طراحی و پیاده‌سازی سیستم چندزبانه: با توجه به نیاز کاربران مختلف، زبان‌ها به صورت داینامیک بارگذاری می‌شود.
+```bash
+# 1. Clone the repository
+git clone https://github.com/Mehdi-ORG/Doctor-Project.git
 
-
-لینک‌های مفید:
-
-### ویدئو دمو در یوتیوب: [مشاهده ویدئو](https://youtu.be/GaxFLsggCO0)
-
-
-### دمو آنلاین (Netlify): [دریافت نسخه آنلاین](https://doctor-project-mehdi-org.netlify.app)
-
-
-توجه: به دلیل محدودیت‌های هاستینگ و نیاز به کارت اعتباری در پلتفرم‌هایی مانند Render و Vercel، امکان دیپلوی کردن سرور JSON به‌صورت آنلاین وجود نداشت. بنابراین، برای اجرای آن باید به‌صورت لوکال از دستور json-server --watch db.json --port 5000 استفاده کنید.
-
-
-مهارت‌ها:
-React.js · JavaScript (ES6+) · React Router · React Hooks · API Integration · Axios · JSON Server / REST API · Framer Motion · React Toastify · SweetAlert2 · Form Validation (RegEx, Custom Validation) · UI/UX Design
-
-## چگونه نصب کنیم؟ (Installation)
-### 1. ابتدا ریپازیتوری را کلون کنید:
-https://github.com/Mehdi-ORG/Doctor-Project.git
-
-### 2. وارد پوشه پروژه شوید:
+# 2. Enter the project folder
 cd Doctor-Project
 
-### 3. پکیج‌های موردنیاز را نصب کنید:
-yarn install   # یا npm install
+# 3. Install dependencies
+yarn install   # or npm install
 
-### 4. پروژه را اجرا کنید:
-yarn start     # یا npm start
+# 4. Run the app
+yarn start     # or npm start
 
-## نحوه استفاده (Usage)
+# 5. Run the mock server (backend)
+json-server --watch db.json --port 5000
 
-1.ابتدا یک حساب کاربری بسازید.
+🛠 Skills Demonstrated
+React.js · JavaScript (ES6+) · React Router · React Hooks · API Integration · Axios · JSON Server / REST API · Framer Motion · React Toastify · SweetAlert2 · Form Validation (RegEx, Custom Validation) · UI/UX Design
 
-2.وارد شوید و از قابلیت‌های مدیریت نوبت‌دهی استفاده کنید.
+📌 Note
+Due to hosting limitations (Render/Vercel require a credit card for backend), the mock server (json-server) is not deployed online.
 
-3.می‌توانید لیست نوبت‌های خود را مشاهده، ویرایش یا حذف کنید.
+Please use it locally by running:
+json-server --watch db.json --port 5000
 
-از منوی بالا می‌توانید زبان سایت را تغییر دهید.
+
+🇮🇷 فارسی (Persian)
+سامانه مدیریت نوبت‌دهی پزشکی
+این پروژه یک سامانه وب برای مدیریت نوبت‌دهی پزشکی است که شامل قابلیت‌های ثبت‌نام، ورود کاربران و مدیریت نوبت‌ها می‌باشد. طراحی و پیاده‌سازی این سیستم با React انجام شده و با بهینه‌سازی عملکرد و تجربه کاربری مناسب، کاربر را قادر می‌سازد تا به راحتی نوبت‌های پزشکی خود را مدیریت کند.
+
+ویژگی‌ها
+✔ مدیریت نوبت‌دهی: ثبت، ویرایش، حذف و مشاهده نوبت‌ها
+✔ ثبت‌نام و ورود با اعتبارسنجی قوی
+✔ پشتیبانی از زبان‌های فارسی، انگلیسی، عربی و فرانسوی
+✔ بهینه‌سازی رندرها با React.memo و useCallback
+✔ پیام‌های توست، SweetAlert2، اسپینر و طراحی مدرن و واکنش‌گرا
+
+
+نحوه اجرا
+ریپازیتوری را کلون کنید
+
+وارد پوشه شوید
+
+پکیج‌ها را نصب کنید (yarn install)
+
+برنامه را اجرا کنید (yarn start)
+
+برای اجرای سرور ساختگی از دستور زیر استفاده کنید:
+
+json-server --watch db.json --port 5000
+
+مهارت‌های استفاده‌شده
+React.js · JavaScript ES6+ · Context API · i18next · JSON Server · UX · Responsive Design · React Hooks · RegEx · Toast & Modal Libraries
+
+
