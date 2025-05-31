@@ -22,7 +22,6 @@ This is a modern, responsive, multilingual web application for managing medical 
 
 ### 🎨 Modern Design
 - Responsive layout (desktop/tablet/mobile)
-- Dark mode toggle
 - Minimal and clean UI
 - Smooth animations with Framer Motion
 
@@ -117,7 +116,6 @@ json-server --watch db.json --port 5000
 🎨 طراحی مدرن
 - طراحی ریسپانسیو برای دسکتاپ، تبلت و موبایل
 - منوی همبرگری برای موبایل
-- حالت Dark Mode
 - انیمیشن‌های روان و طراحی مینیمال
 
 ⚙ بهینه‌سازی عملکرد
